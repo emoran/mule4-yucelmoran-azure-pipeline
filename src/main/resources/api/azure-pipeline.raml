@@ -1,0 +1,25 @@
+#%RAML 1.0
+title: Sample API
+
+/persons:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [{
+              "id": 1,
+              "name": "Edgar Moran",
+              "username": "emoran",
+              "email": "yucel.moran@some.test",
+              "address": {
+                "street": "Kulas Light",
+                "suite": "Apt. 556",
+                "city": "Gwenborough",
+                "zipcode": "92998-3874",
+                "geo": {
+                  "lat": "-37.3159",
+                  "lng": "81.1496"
+                }
+                }}]
