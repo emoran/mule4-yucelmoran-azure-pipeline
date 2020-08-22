@@ -19,16 +19,16 @@
 	</properties>
 	
 	<scm>
-		<connection>scm:git:git@ssh.dev.azure.com:v3/yucelmoran0359/mulesoft-pipeline/mulesoft-pipeline</connection>
-		<developerConnection>scm:git@ssh.dev.azure.com:v3/yucelmoran0359/mulesoft-pipeline/mulesoft-pipeline</developerConnection>
-		<url>https://yucelmoran0359@dev.azure.com/yucelmoran0359/mulesoft-pipeline/_git/mulesoft-pipeline</url>
+		<connection>scm:git:git@ssh.dev.azure.com:v3/yucelmorans/yucelmoran-azure-pipeline/yucelmoran-azure-pipeline</connection>
+		<developerConnection>scm:git@ssh.dev.azure.com:v3/yucelmorans/yucelmoran-azure-pipeline/yucelmoran-azure-pipeline</developerConnection>
+		<url>https://yucelmorans@dev.azure.com/yucelmorans/yucelmoran-azure-pipeline/_git/yucelmoran-azure-pipeline</url>
 	</scm>
 	
 	<distributionManagement>
-	    <repository>
-              <id>yucelmoran0359</id>
-              <url>https://pkgs.dev.azure.com/yucelmoran0359/_packaging/yucelmoran0359/maven/v1</url>
-            </repository>
+	  <repository>
+		  <id>yucelmoran-azure-pipeline</id>
+		  <url>https://pkgs.dev.azure.com/yucelmorans/yucelmoran-azure-pipeline/_packaging/yucelmoran-azure-pipeline/maven/v1</url>
+		</repository>
   	</distributionManagement>
 
 	<build>
@@ -56,6 +56,9 @@
 					    <applicationName>yucelmoran-azure-pipeline</applicationName>
 					    <workerType>Micro</workerType>
 					    <objectStoreV2>true</objectStoreV2>
+					    <properties>
+				        <env>${env}</env>
+				      </properties>
 					</cloudHubDeployment>
 				</configuration>
 				<executions>
@@ -148,9 +151,9 @@
 
 	<repositories>      
         
-        <repository>
-		  <id>yucelmoran0359</id>
-		  <url>https://pkgs.dev.azure.com/yucelmoran0359/_packaging/yucelmoran0359/maven/v1</url>
+       <repository>
+		  <id>yucelmoran-azure-pipeline</id>
+		  <url>https://pkgs.dev.azure.com/yucelmorans/yucelmoran-azure-pipeline/_packaging/yucelmoran-azure-pipeline/maven/v1</url>
 		  <releases>
 		    <enabled>true</enabled>
 		  </releases>
@@ -181,9 +184,6 @@
 			      <enabled>false</enabled>
 			    </snapshots>
             </repository>
-            
-           
-
     </repositories>
     <pluginRepositories>
 	  <pluginRepository>
