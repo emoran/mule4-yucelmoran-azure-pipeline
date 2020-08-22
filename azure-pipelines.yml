@@ -33,4 +33,4 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean install -Dazure.token=-Dazure.token=$(AZURE_TOKEN) -s settings.xml -e'
+    goals: 'clean install -Dazure.token=$(AZURE_TOKEN) -Dnexus.username=$(NEXUS_UERNAME) -Dnexus.password=$(NEXUS_PASSWORD) -s settings.xml -e'
