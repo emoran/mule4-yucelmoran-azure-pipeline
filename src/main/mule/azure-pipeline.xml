@@ -125,6 +125,6 @@ output application/json
     </flow>
     <flow name="get:\persons:azure-pipeline-config">
         <logger level="INFO" message="get:\persons:azure-pipeline-config" />
-        <logger level="INFO" doc:name="Logger" doc:id="403bf497-85ce-4e65-ba1c-51d438e38848" message="adding other logger" />
+        <logger level="INFO" doc:name="Logger" doc:id="403bf497-85ce-4e65-ba1c-51d438e38848" message="adding other logger change" />
     </flow>
 </mule>

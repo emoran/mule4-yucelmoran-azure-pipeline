@@ -13,17 +13,6 @@ pool:
 
 steps:
 - task: Maven@3
-  inputs:
-    mavenPomFile: '$(system.defaultWorkingDirectory)/pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean deploy -Danypoint.username=$(ANYPOINT_USERNAME) -Danypoint.password=$(ANYPOINT_PASSWORD) -Denv=test -Dazure.token=$(AZURE_TOKEN) -s settings.xml -e'
-
-- task: Maven@3
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/test'))
   inputs:
     mavenPomFile: '$(system.defaultWorkingDirectory)/pom.xml'
@@ -33,4 +22,15 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean install -Dazure.token=-Dazure.token=$(AZURE_TOKEN) -s settings.xml -e'
+    goals: 'clean deploy -Danypoint.username=$(ANYPOINT_USERNAME) -Danypoint.password=$(ANYPOINT_PASSWORD) -Denv=test -Dazure.password=$(AZURE_TOKEN) -Dnexus.username=$(NEXUS_UERNAME) -Dnexus.password=$(NEXUS_PASSWORD) -s settings.xml -e'
+
+- task: Maven@3
+  inputs:
+    mavenPomFile: '$(system.defaultWorkingDirectory)/pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'clean install -Dazure.password=$(AZURE_TOKEN) -Dnexus.username=$(NEXUS_UERNAME) -Dnexus.password=$(NEXUS_PASSWORD) -s settings.xml -e'
