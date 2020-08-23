@@ -133,7 +133,7 @@ under the License.
     
 
     <server> 
-      <id>yucelmorans</id>
+      <id>yucelmoran-azure-pipeline</id>
       <username>yucelmorans</username>
       <!-- Treat this auth token like a password. Do not share it with anyone, including Microsoft support. -->
       <!-- The generated token expires on or before 17/11/2019 -->
@@ -281,16 +281,16 @@ under the License.
                 </snapshots>
             </repository>-->
 
-            <repository>
-              <id>dev-azure-com-ymoranm-mulesoft</id>
-              <url>https://pkgs.dev.azure.com/yucelmorans/_packaging/MULESOFT/maven/v1</url>
-              <releases>
-                <enabled>true</enabled>
-              </releases>
-              <snapshots>
-                <enabled>true</enabled>
-              </snapshots>
-            </repository>
+           <repository>
+			  <id>yucelmoran-azure-pipeline</id>
+			  <url>https://pkgs.dev.azure.com/yucelmorans/yucelmoran-azure-pipeline/_packaging/yucelmoran-azure-pipeline/maven/v1</url>
+			  <releases>
+			    <enabled>true</enabled>
+			  </releases>
+			  <snapshots>
+			    <enabled>true</enabled>
+			  </snapshots>
+			</repository>
             
              <repository>
                 <id>MuleRepository</id>
